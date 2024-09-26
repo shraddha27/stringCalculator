@@ -13,7 +13,17 @@
     }
 
     const numArray = numbers.split(delimiter).map(Number);
-    return numArray.reduce((sum,num) => sum + num, 0);
+    
+    const negativeNumbers = numArray.filter(num => num < 0);
+    if(negativeNumbers.length){
+        //console.log(`Negative numbers not allowed : ${negativeNumbers.join(", ")}`);
+        throw new Error(`Negative numbers not allowed : ${negativeNumbers.join(", ")}`) 
+    }
+
+    const filteredNumArray = numArray.filter(num => num <= 1000);
+    //console.log("filteredNumArray",filteredNumArray);
+
+    return filteredNumArray.reduce((sum,num) => sum + num, 0);
 
 
 };
