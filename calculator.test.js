@@ -21,6 +21,12 @@ describe('StringCalculator', () => {
   test('should handle newlines between numbers', () => {
     expect(add("1\n2\n3\n4,5")).toBe(15);
   });
+
+  test('should throw an exception for negative numbers', () => {
+    expect(() => add("1,-2,3")).toThrow("Negative numbers not allowed : -2");
+  });
+
+
  
 
 });
