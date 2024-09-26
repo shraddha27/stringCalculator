@@ -30,5 +30,14 @@ describe('StringCalculator', () => {
     expect(add("2,1001,1")).toBe(3);
   });
 
+  test('should ignore numbers greater then 1000', () => {
+    expect(add("2,1001,1")).toBe(3);
+  });
+
+  test('should return the sum of multiple numbers', () => {
+    expect(add("1,2,3,4")).toBe(10);
+  });
+
+
 
 });
